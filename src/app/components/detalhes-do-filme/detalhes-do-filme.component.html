@@ -1,0 +1,64 @@
+<div class="header">
+    <img src="../../../assets/images/logo-verde.svg" alt="logo">
+    <p>Movies</p>
+
+</div>
+<div>
+    <button mat-icon-button class="profileButton">
+        <mat-icon aria-hidden="false" aria-label="profile">account_circle</mat-icon>
+    </button>
+</div>
+<div>
+    <button mat-icon-button class="returnButton" (click)="back()">
+        <mat-icon matSuffix>keyboard_backspace
+        </mat-icon>
+        return
+    </button>
+</div>
+
+<mat-card>
+    <h1>{{movieSelected.name}}</h1>
+    <section>
+        <p></p>
+    <p class="timeAndDuration"><mat-icon>event_available</mat-icon><b>&nbsp;{{movieSelected.year}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <mat-icon>query_builder</mat-icon> &nbsp;{{movieSelected.runtime}}  
+    </b></p>
+    <div class="rating"><b>{{movieSelected.rated}}</b></div>
+</section>
+<p></p>
+<div>
+    <button mat-icon-button class="favoriteButton" (click)="favoritar(movieSelected.id)" *ngIf="!favorite">
+        <mat-icon>favorite_border</mat-icon> Add to favorites
+    </button>
+    <button mat-raised-button class="favoritedButton" (click)="desfavoritar(movieSelected.id)" *ngIf="favorite">
+        <mat-icon matPrefix>favorite</mat-icon>&nbsp;&nbsp; Favorited
+    </button>
+</div>
+
+<div>
+    <p class="article">{{movieSelected.plot}}</p>
+</div>
+
+<section class="tituloListaCast">
+    <p >Cast</p>
+    <ul type ='none' *ngFor="let c of movieSelected.actors">
+        <li>{{c}}</li>
+    </ul>
+</section>
+
+<section class="tituloListaGenre">
+    <p >Genre</p>
+    <ul type ='none' *ngFor="let g of movieSelected.genre">
+        <li>{{g}}</li>
+    </ul>
+</section>
+
+<section class="tituloListaDirector">
+    <p >Director</p>
+    <ul type ='none'>
+        <li>{{movieSelected.director}}</li>
+    </ul>
+</section>
+
+<img mat-card-image src="{{movieSelected.url}}" class="moviePic">
+
+</mat-card>

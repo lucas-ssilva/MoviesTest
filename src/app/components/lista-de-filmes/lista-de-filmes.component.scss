@@ -1,0 +1,144 @@
+.header {
+    width:1000px;
+    height:100px;
+    margin-left: 10em;
+  }
+  .header p {
+    color: #37B987;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    margin-left: 8em;
+    margin-top: -4.5em;
+  }
+  
+  img {
+      width: 150px;
+      height: 150px;
+  }
+
+.profileButton {
+    color: grey;
+    float:right;
+    margin-right: 139px;
+    margin-top: -50px;
+    transform: scale(1.5);
+}
+
+mat-form-field {
+    color: grey;
+    margin-top: 50px;
+    margin-left: 129px;
+    margin-right: 40px;
+    width: 900px;
+}
+
+button {
+    color: grey;
+    margin-right: 10px;
+}
+
+.imgNoMovies {
+    height: 400px;
+    width: 350px;
+    margin-left: 35em;
+    margin-top: -60px;
+}
+
+h2 {
+    margin-top: -70px;
+    text-align: center;
+    color: grey;
+}
+
+.text {
+    text-align: center;
+    color: grey;
+    margin-top: -30px;
+}
+
+.movie {
+    width: 150px;
+    height: 220px;
+}
+
+.year {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  font-size: 12px; 
+  text-align: left;
+  visibility: hidden;
+  color: white;
+  margin-top: -45px;
+
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+.img__description {
+  position: relative;
+  top: -40px;
+    color: white;
+    visibility: hidden;
+    margin-top: -45px;
+    padding: 5px;
+    text-align: center;
+    z-index: 1;
+    line-break: auto;
+    text-shadow: 0px 0px 6px #0000004D;
+  }
+
+  .favoriteButton {
+    color: #FCFCFC;
+    text-shadow: 0px 0px 10px #0000004D;
+    position: relative;
+    top: 40px;
+    right: -110px;
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .grid:hover .favoriteButton{
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .grid:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .grid:hover .year {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .grid:hover {
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+
+
+.cards {
+  width: 150px;
+    height: 220px;
+    display: grid;
+    float: left;
+    padding: 5px;
+
+  }
+
+  .grid {
+      margin-right:10px ;
+      margin-left: 10px;
+  }
+
+  .outGrid {
+    margin-left: 100px;
+    margin-right: 50px;
+  }

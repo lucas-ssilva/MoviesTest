@@ -1,0 +1,151 @@
+.header {
+  width:1000px;
+  height:100px;
+  margin-left: 10em;
+}
+
+.header p {
+  color: #37B987;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin-left: 8em;
+  margin-top: -4.5em;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.profileButton {
+  color: grey;
+  float:right;
+  margin-right: 300px;
+  margin-top: -50px;
+  transform: scale(1.5);
+}
+
+.returnButton {
+  margin-left: 139px;
+  margin-top: 20px;
+  color: grey;
+}
+
+mat-card {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.moviePic {
+  margin-left: 45em;
+  margin-right: 120px;
+  margin-top: -30em;
+  height: 500px;
+  width: 400px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-left: 70px;
+  margin-right: 10em;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 50px;
+}
+
+.timeAndDuration mat-icon {
+  color: grey;
+}
+
+.timeAndDuration {
+  margin-top: 2em;
+  margin-left: 4em;
+  font-size: 20px;
+}
+
+.rating {
+  height: 20px;
+  width: 40px;
+  background-color: #EB4B3C;
+  border-radius: 2px;
+  text-align: center;
+  color:white;
+  font-size: 12px;
+  margin-left: 35em;
+  margin-top: -3em;
+}
+
+.favoriteButton mat-icon {
+color: #EB4B3C;
+border: 1px;
+border-radius: 2px;
+margin-left: 3.5em;
+}
+
+.favoriteButton {
+  color: grey ;
+  font-size: 15px;
+  padding-left: 3px;
+}
+
+.favoritedButton {
+margin-left: 80px;
+padding-right: 20px;
+padding-left:20px;
+background-color:#EB4B3C ;
+color:#FCFCFC ;
+
+}
+
+.favoritedButton mat-icon {
+  color:#FCFCFC ;
+}
+
+.article {
+  width: 350px ;
+  margin-top: 30px;
+  font-size: 17px;
+  margin-left: 100px;
+  color: #637463;
+  letter-spacing: 1px;
+
+}
+
+.tituloListaCast{
+  margin-bottom: auto;
+}
+
+.tituloListaCast li {
+  font-size: 12px;
+}
+
+.tituloListaCast p {
+  margin-left: 39px;
+  margin-top: 120px;
+  color: #637463;
+}
+
+.tituloListaGenre li {
+  font-size: 12px;
+  margin-left: 200px;
+}
+
+.tituloListaGenre p {
+  margin-left: 240px;
+  margin-top: -110px;
+  color: #637463;
+}
+
+.tituloListaDirector li { 
+  font-size: 12px;
+  margin-left: 360px;
+}
+
+.tituloListaDirector p {
+  margin-left: 400px;
+  margin-top: -130px;
+  color: #637463;
+
+}

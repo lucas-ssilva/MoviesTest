@@ -1,0 +1,69 @@
+.profile {
+    margin-top:0;
+    margin-left:auto;
+    margin-bottom:0;
+    margin-right:auto;
+}
+
+.header {
+  width:1000px;
+  height:100px;
+  margin-left: 10em;
+}
+
+.header p {
+    color: #37B987;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin-left: 8em;
+    margin-top: -4.5em;
+  }
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+h2 {
+    color: #637463;
+    text-align: end;
+    margin-right: 46em;
+    margin-top: 3em;
+}
+
+input {
+    display: block;
+}
+
+
+fieldset {
+    border: none;
+    margin-left: 40em;
+    margin-top: -9em;
+    form {
+        width: 100%;
+        mat-form-field {
+            width: 100%;
+            ::ng-deep .mat-form-field-outline {
+                background: #FFFFFF;
+            }
+            mat-icon {
+                width: 18px;
+                height: 18px;
+            } 
+        }
+    }
+}
+
+.save {
+    background-color: #3CC896;
+    color:white;
+    margin-right: -60em;
+    margin-top: 100px;
+}
+
+.cancel {
+    color: grey;
+    margin-left: 60em;
+}

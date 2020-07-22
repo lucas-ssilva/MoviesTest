@@ -1,0 +1,81 @@
+<div class="header">
+    <img src="../../../assets/images/logo-verde.svg" alt="logo">
+    <p>Movies</p>
+</div>
+<div>
+    <button mat-icon-button class="profileButton" (click)="userScreen()">
+        <mat-icon aria-hidden="false" aria-label="profile">account_circle</mat-icon>
+    </button>
+</div>
+<div>
+    <mat-form-field >
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>Search movies, actors or genre</mat-label>
+        <input matInput type="text" [matAutocomplete]='auto'  [formControl]="myControl">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <button type="submit" mat-icon-button (click)="buscar()">
+        <mat-icon>search</mat-icon>
+    </button>
+    <button type="submit" mat-button *ngIf="!onlyFavorites" (click)='allFavorites()'>Favorites</button>
+    <button type="submit" mat-button *ngIf="onlyFavorites" (click)="allMovies()">List All</button>
+</div>
+
+<section *ngIf="listaVazia">
+    <img src="../../../assets/images/warning-nomovie.svg" class="imgNoMovies">
+    <h2>No movies found!</h2>
+    <br>
+    <p class="text">Reset your filters to find something.</p>
+</section>
+
+<div *ngIf="!filtered && !onlyFavorites && !listaVazia" class="outGrid">
+    <section *ngFor="let movie of movies index as i" class="cards grid">
+        <button mat-icon-button class="favoriteButton"(click)="favoritar(i)" *ngIf="!movie.favorite">
+            <mat-icon >favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button class="favoriteButton" (click)="desfavoritar(i)" *ngIf="movie.favorite">
+            <mat-icon *ngIf="movie.favorite">favorite</mat-icon>
+        </button>
+        <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
+            <img src="{{movie.url}}" class="movie" >
+            <p class="img__description"> <b>{{movie.name}} </b> </p>
+            <p class="year" style="size: 12px; text-align: left;">{{movie.year}}</p>
+        </a>
+    </section>
+</div>
+
+<div *ngIf="filtered" class="outGrid">
+    <section *ngFor="let movie of filteredList index as i" class="cards grid">
+        <button mat-icon-button class="favoriteButton"(click)="favoritar(i)" *ngIf="!movie.favorite">
+            <mat-icon >favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button class="favoriteButton" (click)="desfavoritar(i)" *ngIf="movie.favorite">
+            <mat-icon *ngIf="movie.favorite">favorite</mat-icon>
+        </button>
+        <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
+            <img src="{{movie.url}}" class="movie">
+            <p class="img__description"> <b>{{movie.name}} </b> </p>
+            <p class="year">{{movie.year}}</p>
+        </a>
+    </section>
+</div>
+
+<div *ngIf="onlyFavorites" class="outGrid">
+    <section *ngFor="let movie of favorites index as i" class="cards grid">
+        <button mat-icon-button class="favoriteButton"(click)="favoritar(i)" *ngIf="!movie.favorite">
+            <mat-icon >favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button class="favoriteButton" (click)="desfavoritar(i)" *ngIf="movie.favorite">
+            <mat-icon *ngIf="movie.favorite">favorite</mat-icon>
+        </button>
+         <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
+        <img src="{{movie.url}}" class="movie" >
+        <p class="img__description"> <b>{{movie.name}} </b> </p>
+        <p class="year" style="size: 12px; text-align: left;">{{movie.year}}</p>
+    </a>
+    </section>
+</div>
