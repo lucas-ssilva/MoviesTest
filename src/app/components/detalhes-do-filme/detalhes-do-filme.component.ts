@@ -45,12 +45,9 @@ export class DetalhesDoFilmeComponent implements OnInit {
   }
 
   loadMovie() {
-
     this.movieSelected = MoviesService.movies.find(x => x.id == this.id);
     this.index = MoviesService.movies.findIndex(x => x.id == this.id);
     this.favorite = this.movieSelected.favorite;
   }
-
-
 
 }

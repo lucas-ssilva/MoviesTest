@@ -14,28 +14,26 @@ export class MoviesService {
   updatedMovie:Movies;
 
   constructor(
-    private http: HttpClient,
-  ) { 
-    this.getMovies().subscribe((response)=> {
-      response.forEach((item)=>{
-        MoviesService.movies.push({
-          name: item['title'],
-          year: item['year'],
-          rated: item['rated'],
-          runtime: item['runtime'],
-          genre: item['genre'].split(','),
-          director: item['director'],
-          actors: item['actors'].split(','),
-          plot: item['plot'],
-          url: item['poster'],
-          favorite: false,
-          id: this.nextID,
-        })
-        this.nextID++
+    private http: HttpClient,) { 
+      this.getMovies().subscribe((response)=> {
+        response.forEach((item)=>{
+          MoviesService.movies.push({
+            name: item['title'],
+            year: item['year'],
+            rated: item['rated'],
+            runtime: item['runtime'],
+            genre: item['genre'].split(','),
+            director: item['director'],
+            actors: item['actors'].split(','),
+            plot: item['plot'],
+            url: item['poster'],
+            favorite: false,
+            id: this.nextID,
+          })
+          this.nextID++
+        });
       });
-      console.log(MoviesService.movies)
-    });
-   }
+    }
 
   public getMovies(): Observable<any> { 
     return this.http.get(this.url);

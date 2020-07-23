@@ -10,18 +10,20 @@
 <div>
     <mat-form-field >
         <mat-icon matPrefix>search</mat-icon>
-        <mat-label>Search movies, actors or genre</mat-label>
-        <input matInput type="text" [matAutocomplete]='auto'  [formControl]="myControl">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-label>Search movies, actors or genre</mat-label>
+                <input matInput type="text" [matAutocomplete]='auto'  [formControl]="myControl">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
                 {{option}}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
+
     <button type="submit" mat-icon-button (click)="buscar()">
         <mat-icon>search</mat-icon>
     </button>
     <button type="submit" mat-button *ngIf="!onlyFavorites" (click)='allFavorites()'>Favorites</button>
+
     <button type="submit" mat-button *ngIf="onlyFavorites" (click)="allMovies()">List All</button>
 </div>
 
@@ -53,9 +55,11 @@
         <button mat-icon-button class="favoriteButton"(click)="favoritar(i)" *ngIf="!movie.favorite">
             <mat-icon >favorite_border</mat-icon>
         </button>
+
         <button mat-icon-button class="favoriteButton" (click)="desfavoritar(i)" *ngIf="movie.favorite">
             <mat-icon *ngIf="movie.favorite">favorite</mat-icon>
         </button>
+
         <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
             <img src="{{movie.url}}" class="movie">
             <p class="img__description"> <b>{{movie.name}} </b> </p>
@@ -72,10 +76,10 @@
         <button mat-icon-button class="favoriteButton" (click)="desfavoritar(i)" *ngIf="movie.favorite">
             <mat-icon *ngIf="movie.favorite">favorite</mat-icon>
         </button>
-         <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
-        <img src="{{movie.url}}" class="movie" >
-        <p class="img__description"> <b>{{movie.name}} </b> </p>
-        <p class="year" style="size: 12px; text-align: left;">{{movie.year}}</p>
-    </a>
+        <a [routerLink]="['/listaDeFilmes/detalhes',movie.id]">
+            <img src="{{movie.url}}" class="movie" >
+            <p class="img__description"> <b>{{movie.name}} </b> </p>
+            <p class="year" style="size: 12px; text-align: left;">{{movie.year}}</p>
+        </a>
     </section>
 </div>
